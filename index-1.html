@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhD Chaos Index — How Unhinged Are You Today?</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ INTRO SCREEN ═══ -->
+  <section id="intro" class="screen active">
+    <div class="container">
+      <div class="stamp">CONFIDENTIAL — FOR PhD STUDENTS ONLY</div>
+
+      <div class="hero-title-wrap">
+        <h1 class="hero-title">PhD<br/>Chaos<br/>Index</h1>
+        <div class="chaos-badge">™</div>
+      </div>
+
+      <p class="hero-sub">A rigorously peer-reviewed diagnostic tool<br/>for measuring your current level of academic unhinged-ness.</p>
+
+      <div class="disclaimer-box">
+        <span class="disclaimer-label">⚠ DISCLAIMER</span>
+        <p>This test is backed by zero IRB approval, one overworked grad student, and the collective suffering of every PhD cohort that ever existed. Results are 94.7% accurate (p &lt; 0.05, n = your entire life choices).</p>
+      </div>
+
+      <button class="btn-primary" id="btn-start">Run Diagnostic →</button>
+
+      <p class="footnote">~3 minutes · 8 questions · No PI oversight</p>
+    </div>
+  </section>
+
+  <!-- ═══ QUIZ SCREEN ═══ -->
+  <section id="quiz" class="screen">
+    <div class="container">
+
+      <!-- CHAOS METER -->
+      <div class="meter-wrap">
+        <div class="meter-label-row">
+          <span class="meter-label">CHAOS LEVEL</span>
+          <span class="meter-value" id="chaos-value">0%</span>
+        </div>
+        <div class="meter-track">
+          <div class="meter-fill" id="chaos-fill"></div>
+          <div class="meter-zones">
+            <span>Functional</span>
+            <span>Spiralling</span>
+            <span>Chapped Marungi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUESTION CARD -->
+      <div class="q-card" id="q-card">
+        <div class="q-meta">
+          <span class="q-tag" id="q-tag">QUESTION 01 / 08</span>
+          <span class="q-category" id="q-category"></span>
+        </div>
+        <p class="q-text" id="q-text"></p>
+        <div class="options-grid" id="options-grid"></div>
+      </div>
+
+      <button class="btn-next" id="btn-next" disabled>Next →</button>
+    </div>
+  </section>
+
+  <!-- ═══ RESULT SCREEN ═══ -->
+  <section id="result" class="screen">
+    <div class="container">
+      <div class="result-header">
+        <p class="result-eyebrow">DIAGNOSTIC COMPLETE</p>
+        <div class="result-score-wrap">
+          <div class="result-score-ring">
+            <svg viewBox="0 0 120 120" class="ring-svg">
+              <circle cx="60" cy="60" r="52" class="ring-bg"/>
+              <circle cx="60" cy="60" r="52" class="ring-fill" id="ring-fill"/>
+            </svg>
+            <div class="ring-inner">
+              <span class="ring-number" id="ring-number">0</span>
+              <span class="ring-unit">/ 100</span>
+            </div>
+          </div>
+        </div>
+        <h2 class="result-title" id="result-title"></h2>
+        <p class="result-tagline" id="result-tagline"></p>
+      </div>
+
+      <div class="result-body">
+        <div class="result-block" id="block-diagnosis">
+          <p class="block-label">🔬 OFFICIAL DIAGNOSIS</p>
+          <p class="block-text" id="result-diagnosis"></p>
+        </div>
+
+        <div class="result-block" id="block-pi">
+          <p class="block-label">🕵️ PI THREAT ASSESSMENT</p>
+          <p class="block-text" id="result-pi"></p>
+        </div>
+
+        <div class="result-block" id="block-survival">
+          <p class="block-label">🧯 SURVIVAL PROTOCOL</p>
+          <p class="block-text" id="result-survival"></p>
+        </div>
+
+        <div class="result-block highlight-block" id="block-roast">
+          <p class="block-label">☠️ THE ROAST</p>
+          <p class="block-text" id="result-roast"></p>
+        </div>
+
+        <div class="result-block" id="block-citation">
+          <p class="block-label">📄 CITE THIS RESULT</p>
+          <p class="block-text citation-text" id="result-citation"></p>
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-primary" id="btn-restart">Run Diagnostic Again</button>
+        <p class="share-nudge">Share your chaos score with your labmates. They're definitely worse.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
